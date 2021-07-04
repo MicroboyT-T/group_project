@@ -142,7 +142,7 @@ def main():
         redrawWindow(win, game, player)
 
 
-#Menu screen #
+#Menu screen#
 def menu_screen():
     run = True
     clock = pygame.time.Clock()
