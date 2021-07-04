@@ -3,8 +3,8 @@ from _thread import *
 import pickle
 from game import Game
 
-server = "192.168.56.1"
-port = 5555
+server = "192.168.56.1"     #This IP server has to be same with you ip machine#
+port = 5555                 #Any port can used must higher then 1500#
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -56,7 +56,7 @@ def threaded_client(conn, p, gameId):
     idCount -= 1
     conn.close()
 
-
+#part assign a new player#
 
 while True:
     conn, addr = s.accept()
