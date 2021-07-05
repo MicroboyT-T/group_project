@@ -6,7 +6,7 @@ from game import Game
 server = "192.168.56.1"     #This IP server has to be same with you ip machine#
 port = 5555                 #Any port can used must higher then 1500#
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  #initialize s for socket.socket function#
 
 try:
     s.bind((server, port))
@@ -20,6 +20,7 @@ connected = set()
 games = {}
 idCount = 0
 
+#part for parallel processing for multiple client#
 
 def threaded_client(conn, p, gameId):
     global idCount

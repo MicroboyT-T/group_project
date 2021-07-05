@@ -112,7 +112,7 @@ def main():
                 break
 
             font = pygame.font.SysFont("comicsans", 90)
-            if (game.winner() == 1 and player == 1) or (game.winner() == 0 and player == 0):
+            if (game.winner() == 1 and player == 1) or (game.winner() == 0 and player == 0):  #interface to determine the winner#
                 text = font.render("Anda Menang! :)", 1, (0,255,0))
             elif game.winner() == -1:
                 text = font.render("Seri :|", 1, (255,215,0))
@@ -139,7 +139,7 @@ def main():
                             if not game.p2Went:
                                 n.send(btn.text)
 
-        redrawWindow(win, game, player)
+        redrawWindow(win, game, player)  #prompt the winner#
 
 
 #Menu screen#
@@ -152,7 +152,7 @@ def menu_screen():
         win.fill((0,0,0))     #set menu background to black
         font = pygame.font.SysFont("comicsans", 60)
         text = font.render("Tekan Untuk Mula!", 1, (255,0,0))  #set color to red
-        win.blit(text, (100,200))
+        win.blit(text, (100,200))  #size of font#
         pygame.display.update()
 
         for event in pygame.event.get():
