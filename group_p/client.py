@@ -8,7 +8,7 @@ height = 700
 win = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Client")
 
-#Button interface part#
+#Button interaction part#
 class Button:
     def __init__(self, text, x, y, color):
         self.text = text
@@ -21,7 +21,7 @@ class Button:
     def draw(self, win):
         pygame.draw.rect(win, self.color, (self.x, self.y, self.width, self.height))
         font = pygame.font.SysFont("comicsans", 40)
-        text = font.render(self.text, 1, (255,255,255))
+        text = font.render(self.text, 1, (255,255,255))  #color set to white
         win.blit(text, (self.x + round(self.width/2) - round(text.get_width()/2), self.y + round(self.height/2) - round(text.get_height()/2)))
 
     def click(self, pos):
@@ -35,7 +35,7 @@ class Button:
 
 #Window part#
 def redrawWindow(win, game, p):
-    win.fill((0,0,0))
+    win.fill((0,0,0))   #set window background to black
 
     if not(game.connected()):
         font = pygame.font.SysFont("comicsans", 65)
@@ -43,10 +43,10 @@ def redrawWindow(win, game, p):
         win.blit(text, (width/2 - text.get_width()/2, height/2 - text.get_height()/2))
     else:
         font = pygame.font.SysFont("comicsans", 60)
-        text = font.render("Anda", 1, (0, 0,255))
+        text = font.render("Anda", 1, (0, 0,255))      #color set to blue
         win.blit(text, (180, 200))
 
-        text = font.render("Lawan", 1, (255, 0, 0))
+        text = font.render("Lawan", 1, (255, 0, 0))    #color set to red
         win.blit(text, (380, 200))
 
         move1 = game.get_player_move(0)
@@ -84,7 +84,7 @@ def redrawWindow(win, game, p):
 
 #interface for winning and losing menu#
 
-btns = [Button("Pistol", 50, 500, (44,53,57)), Button("Burung", 250, 500, (165,42,42)), Button("Air", 450, 500, (0,105,147))]
+btns = [Button("Pistol", 50, 500, (44,53,57)), Button("Burung", 250, 500, (165,42,42)), Button("Air", 450, 500, (0,105,147))]   #color for "pistol" is gun metal, "Burung" is brown and "Air" is blue sea
 def main():
     run = True
     clock = pygame.time.Clock()
@@ -149,9 +149,9 @@ def menu_screen():
 
     while run:
         clock.tick(60)
-        win.fill((0,0,0))
+        win.fill((0,0,0))     #set menu background to black
         font = pygame.font.SysFont("comicsans", 60)
-        text = font.render("Tekan Untuk Mula!", 1, (255,0,0))
+        text = font.render("Tekan Untuk Mula!", 1, (255,0,0))  #set color to red
         win.blit(text, (100,200))
         pygame.display.update()
 
