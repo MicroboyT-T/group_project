@@ -34,7 +34,7 @@ class Game:
         p1 = self.moves[0].upper()[0]
         p2 = self.moves[1].upper()[0]
 
-        winner = -1
+        winner = -1                     #"P" for Pistol, "B" for Burung "A" for Air
         if p1 == "P" and p2 == "B":
             winner = 0
         elif p1 == "B" and p2 == "P":
@@ -48,7 +48,7 @@ class Game:
         elif p1 == "A" and p2 == "B":
             winner = 1
 
-        return winner
+        return winner                  #return the value of winner
 
     def resetWent(self):
         self.p1Went = False
