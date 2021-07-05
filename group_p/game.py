@@ -1,6 +1,6 @@
 #Algorithm for the game#
 class Game:
-    def __init__(self, id):
+    def __init__(self, id):  #determine the player ID#
         self.p1Went = False
         self.p2Went = False
         self.ready = False
@@ -16,7 +16,7 @@ class Game:
         """
         return self.moves[p]
 
-    def play(self, player, move):
+    def play(self, player, move):  #function for player move#
         self.moves[player] = move
         if player == 0:
             self.p1Went = True
