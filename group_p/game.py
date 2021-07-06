@@ -1,6 +1,6 @@
 #Algorithm for the game#
 class Game:
-    def __init__(self, id):  #determine the player ID#
+    def __init__(self, id):  #set the variable of the component
         self.p1Went = False
         self.p2Went = False
         self.ready = False
